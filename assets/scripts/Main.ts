@@ -9,9 +9,6 @@ export class Main extends Component {
 
   @property({ type: [Prefab] })
   iconPrefabs: Prefab[] = []; // массив префабов иконок
-
-  @property({ type: Prefab })
-  iconPrefab2: Prefab = null; // родительский объект для иконок
   
   @property({ type: EditBox })
   inputM: EditBox = null; // поле ввода для M, ширина
@@ -29,10 +26,10 @@ export class Main extends Component {
   startButton: Button = null; // ссылка на кнопку Start
 
   private grid: Node[][] = []; // сетка иконок
-  private M: number = 7;
-  private N: number = 8;
-  private X: number = 5;
-  private Y: number = 3;
+  private M: number = 2;
+  private N: number = 2;
+  private X: number = 2;
+  private Y: number = 2;
 
   start() {
     // установки событий и вызова других методов при старте компонент
@@ -75,13 +72,21 @@ export class Main extends Component {
   }
 
   updateParameters() {
-    this.M = parseInt(this.inputM.string);
-    this.N = parseInt(this.inputN.string);
-    this.X = parseInt(this.inputX.string);
-    this.Y = parseInt(this.inputY.string);
+    const parsedM = parseInt(this.inputM.string);
+    const parsedN = parseInt(this.inputN.string);
+    const parsedX = parseInt(this.inputX.string);
+    const parsedY = parseInt(this.inputY.string);
 
-    // обновляем сетку с новыми параметрами
-    this.initGrid();
+    if (!isNaN(parsedM) && parsedM > 0) this.M = parsedM;
+    if (!isNaN(parsedN) && parsedN > 0) this.N = parsedN;
+    if (!isNaN(parsedX) && parsedX > 0 && parsedX <= this.iconPrefabs.length) {
+      this.X = parsedX;
+    } else {
+      this.X = Math.min(this.iconPrefabs.length, this.X); // Устанавливаем X не больше количества префабов
+    }
+    if (!isNaN(parsedY) && parsedY > 0) this.Y = parsedY;
+
+    this.initGrid(); // обновляем сетку с новыми параметрами
   }
 
   generateGrid() {
@@ -93,7 +98,7 @@ export class Main extends Component {
 
     for (let i = 0; i < this.M; i++) {
       for (let j = 0; j < this.N; j++) {
-        const iconType = Math.floor(Math.random() * this.iconPrefabs.length); // выбираем случайный тип из массива префабов
+        const iconType = Math.floor(Math.random() * this.X); // выбираем случайный тип из массива префабов
         console.log(iconType);
 
         if (iconType >= 0 && iconType < this.iconPrefabs.length) { // работа с только допустимыми индексами
@@ -121,6 +126,7 @@ export class Main extends Component {
           const prefabType = this.grid[i][j].getComponent(PrefabType).type; // определяется тип префаба
           this.findCluster(i, j, prefabType, visited, cluster); // поиск кластера
           if (cluster.length >= this.Y) { // проверка размера кластера
+            foundCluster = true; // обновляем флаг
             cluster.forEach((pos) => {
               const iconNode = this.grid[pos.x][pos.y];
               this.highlightIcon(iconNode); // изменение иконки
@@ -151,7 +157,7 @@ export class Main extends Component {
       x < 0 ||
       x >= this.M ||
       y < 0 ||
-      y >= this.N || // если x или y выходят за пределы границ сетки
+      y >= this.N ||  // если x или y выходят за пределы границ сетки
       visited[x][y] || //  если текущая ячейка уже была посещена
       !this.isSameType(this.grid[x][y].getComponent(PrefabType).type, iconType) // если тип текущего элемента не совпадает с искомым типом
     ) {
@@ -175,7 +181,7 @@ export class Main extends Component {
 
     highlightIcon(iconNode: Node) { // представляет собой узел иконки, которую нужно выделить
     const parent = iconNode.parent; // получаем родительский узел, чтобы затем добавить новый префаб
-    const prefabIndex = Math.floor(Math.random() * this.iconPrefabs.length); // выбираем случайный тип из массива префабов
+    const prefabIndex = Math.floor(Math.random() * this.X); // выбираем случайный тип из массива префабов
     const newIcon = instantiate(this.iconPrefabs[prefabIndex]); // создаем новый экземпляр выбранного префаба
 
     newIcon.position = iconNode.position; // устанавливаем позицию нового узла в ту же позицию, что и у старого

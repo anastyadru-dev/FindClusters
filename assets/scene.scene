@@ -190,7 +190,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 441.75725986597166,
+    "_orthoHeight": 442.08643815201197,
     "_near": 0,
     "_far": 2000,
     "_color": {
@@ -373,7 +373,7 @@
     "_string": "Start",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 62.95312500000001,
+    "_actualFontSize": 62.90624999999999,
     "_fontSize": 60,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -598,10 +598,6 @@
         "__expectedType__": "cc.Prefab"
       }
     ],
-    "iconPrefab2": {
-      "__uuid__": "246f686e-1a9f-4c0c-9156-bfcd272b1703",
-      "__expectedType__": "cc.Prefab"
-    },
     "inputM": {
       "__id__": 16
     },
@@ -1004,7 +1000,7 @@
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 62.95312500000001,
+    "_actualFontSize": 62.90624999999999,
     "_fontSize": 60,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1064,8 +1060,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -90,
-      "y": 60,
+      "x": -60,
+      "y": 70,
       "z": 0
     },
     "_lrot": {
@@ -1103,7 +1099,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 41.64964166046165,
+      "width": 112.1699189642325,
       "height": 50.400000000000006
     },
     "_anchorPoint": {
@@ -1133,11 +1129,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "M",
+    "_string": "M (ширина)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 52.46093750000001,
-    "_fontSize": 50,
+    "_actualFontSize": 20.96875,
+    "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
     "_overflow": 0,
@@ -1554,7 +1550,7 @@
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 62.95312500000001,
+    "_actualFontSize": 62.90624999999999,
     "_fontSize": 60,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -1614,8 +1610,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -90,
-      "y": 60,
+      "x": -60,
+      "y": 70,
       "z": 0
     },
     "_lrot": {
@@ -1653,7 +1649,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 36.10774036671631,
+      "width": 106.41060159742922,
       "height": 50.400000000000006
     },
     "_anchorPoint": {
@@ -1683,11 +1679,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "N",
+    "_string": "N (высота)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 52.46093750000001,
-    "_fontSize": 50,
+    "_actualFontSize": 20.96875,
+    "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
     "_overflow": 0,
@@ -2104,7 +2100,7 @@
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 62.95312500000001,
+    "_actualFontSize": 62.90624999999999,
     "_fontSize": 60,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -2164,8 +2160,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -90,
-      "y": 60,
+      "x": -60,
+      "y": 70,
       "z": 0
     },
     "_lrot": {
@@ -2203,7 +2199,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 33.3490058404691,
+      "width": 157.52204906389719,
       "height": 50.400000000000006
     },
     "_anchorPoint": {
@@ -2233,11 +2229,11 @@
       "b": 255,
       "a": 255
     },
-    "_string": "X",
+    "_string": "X (типы иконок)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 52.46093750000001,
-    "_fontSize": 50,
+    "_actualFontSize": 20.96875,
+    "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
     "_overflow": 0,
@@ -2654,7 +2650,7 @@
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 62.95312500000001,
+    "_actualFontSize": 62.90624999999999,
     "_fontSize": 60,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -2714,8 +2710,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -90,
-      "y": 60,
+      "x": -60,
+      "y": 70,
       "z": 0
     },
     "_lrot": {
@@ -2753,8 +2749,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 33.3490058404691,
-      "height": 50.400000000000006
+      "width": 137.77441260711626,
+      "height": 45.199999999999996
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2783,13 +2779,13 @@
       "b": 255,
       "a": 255
     },
-    "_string": "Y",
+    "_string": "Y (min размер\nкластера)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 52.46093750000001,
-    "_fontSize": 50,
+    "_actualFontSize": 20.96875,
+    "_fontSize": 20,
     "_fontFamily": "Arial",
-    "_lineHeight": 40,
+    "_lineHeight": 20,
     "_overflow": 0,
     "_enableWrapText": true,
     "_font": null,
