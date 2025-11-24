@@ -57,6 +57,7 @@ export class Main extends Component {
   }
 
   onStartButtonClick() {
+
     this.startButton.interactable = false; // блокируем кнопку start
     this.inputM.enabled = false; // блокируем поле ввода M
     this.inputN.enabled = false; // блокируем поле ввода N
@@ -64,9 +65,7 @@ export class Main extends Component {
     this.inputY.enabled = false; // блокируем поле ввода Y
 
     this.updateParameters(); // обновление параметров из полей ввода
-
     this.clearGrid(); // очищаем сетку перед генерацией нового поля
-
     this.generateGrid();
     this.highlightClusters();
   }
@@ -104,8 +103,7 @@ export class Main extends Component {
         if (iconType >= 0 && iconType < this.iconPrefabs.length) { // работа с только допустимыми индексами
           const iconNode = instantiate(this.iconPrefabs[iconType]); // создаем иконку из выбранного префаба
           iconNode.setPosition(
-            new Vec3(startX + i * spacingX, startY - j * spacingY, 0)
-          ); // установка позиции с учетом начальных координат и расстояния
+            new Vec3(startX + i * spacingX, startY - j * spacingY, 0)); // установка позиции с учетом начальных координат и расстояния
           this.grid[i][j] = iconNode; // сохраняет ссылку на созданный узел иконки в двумерном массиве
           this.gridParent.addChild(iconNode); // делает иконку видимой на экране
         }
@@ -114,52 +112,42 @@ export class Main extends Component {
   }
 
   highlightClusters() {
-    // для поиска и выделения кластеров элементов в двумерной сетке
-    const visited: boolean[][] = Array.from({ length: this.M }, () => Array(this.N).fill(false)
-    );
-    let foundCluster = false; // переменная для отслеживания наличия кластеров
-
-    for (let i = 0; i < this.M; i++) { // прохождение по всем строкам
+    const visited: boolean[][] = Array.from({ length: this.M }, () => Array(this.N).fill(false));
+     let foundCluster = false; // переменная для отслеживания наличия кластеров
+    
+    for (let i = 0; i < this.M; i++) {
       for (let j = 0; j < this.N; j++) {
-        if (!visited[i][j]) { // проверка на посещение
-          const cluster: Vec3[] = []; // используется для хранение массива узлов
-          const prefabType = this.grid[i][j].getComponent(PrefabType).type; // определяется тип префаба
-          this.findCluster(i, j, prefabType, visited, cluster); // поиск кластера
-          if (cluster.length >= this.Y) { // проверка размера кластера
-            foundCluster = true; // обновляем флаг
+        if (!visited[i][j]) {
+          const cluster: Vec3[] = [];
+          const prefabType = this.grid[i][j].getComponent(PrefabType).type; // Получаем тип префаба
+          this.findCluster(i, j, prefabType, visited, cluster); // Ищем кластер
+          
+          if (cluster.length >= this.Y) { // Проверяем размер кластера
             cluster.forEach((pos) => {
               const iconNode = this.grid[pos.x][pos.y];
-              this.highlightIcon(iconNode); // изменение иконки
+              this.highlightIcon(iconNode); // Изменяем иконку
             });
           }
         }
       }
-   }
-
+    }
+    // Проверяем, найден ли хотя бы один кластер
     if (!foundCluster) {
-        this.startButton.interactable = true; // разблокируем кнопку start
-        this.inputM.enabled = true; // разблокируем поле ввода M
-        this.inputN.enabled = true; // разблокируем поле ввода N
-        this.inputX.enabled = true; // разблокируем поле ввода X
-        this.inputY.enabled = true; // разблокируем поле ввода Y
+        this.startButton.interactable = true; // Разблокируем кнопку start
+        this.inputM.enabled = true; // Разблокируем поле ввода M
+        this.inputN.enabled = true; // Разблокируем поле ввода N
+        this.inputX.enabled = true; // Разблокируем поле ввода X
+        this.inputY.enabled = true; // Разблокируем поле ввода Y
     }
   }
 
-  findCluster(
-    x: number,
-    y: number,
-    iconType: any,
-    visited: boolean[][],
-    cluster: Vec3[]
-  ) {
-    // используется для поиска и формирования кластера элементов в двумерной сетке
+
+   findCluster(x: number, y: number, iconType: any, visited: boolean[][], cluster: Vec3[]) {
     if (
-      x < 0 ||
-      x >= this.M ||
-      y < 0 ||
-      y >= this.N ||  // если x или y выходят за пределы границ сетки
-      visited[x][y] || //  если текущая ячейка уже была посещена
-      !this.isSameType(this.grid[x][y].getComponent(PrefabType).type, iconType) // если тип текущего элемента не совпадает с искомым типом
+      x < 0 || x >= this.M ||
+      y < 0 || y >= this.N ||
+      visited[x][y] ||
+      !this.isSameType(this.grid[x][y].getComponent(PrefabType).type, iconType)
     ) {
       return;
     }
@@ -167,7 +155,7 @@ export class Main extends Component {
     visited[x][y] = true;
     cluster.push(new Vec3(x, y, 0));
 
-    // проверка соседей
+    // Проверка соседей
     this.findCluster(x - 1, y, iconType, visited, cluster); // вверх
     this.findCluster(x + 1, y, iconType, visited, cluster); // вниз
     this.findCluster(x, y - 1, iconType, visited, cluster); // влево
@@ -175,26 +163,16 @@ export class Main extends Component {
   }
 
   isSameType(type1: any, type2: any): boolean {
-    // указывает, являются ли эти два типа одинаковыми
     return type1 === type2;
   }
 
-    highlightIcon(iconNode: Node) { // представляет собой узел иконки, которую нужно выделить
-    const parent = iconNode.parent; // получаем родительский узел, чтобы затем добавить новый префаб
-    const prefabIndex = Math.floor(Math.random() * this.X); // выбираем случайный тип из массива префабов
-    const newIcon = instantiate(this.iconPrefabs[prefabIndex]); // создаем новый экземпляр выбранного префаба
+  highlightIcon(iconNode: Node) {
+    const spineNode = iconNode.getComponent(sp.Skeleton);
 
-    newIcon.position = iconNode.position; // устанавливаем позицию нового узла в ту же позицию, что и у старого
-    iconNode.destroy(); // удаляем старую иконку
-    parent.addChild(newIcon); // добавляем новый узел в родительский узел
-
-    // устанавливаем анимацию для нового префаба
-    const spineNode = newIcon.getComponent(sp.Skeleton);
     if (spineNode) {
-        console.log("Skeleton component found");
-        spineNode.setAnimation(0, "win", false);
+      spineNode.setAnimation(0, "win", false); // Устанавливаем анимацию "win"
 
-        spineNode.setCompleteListener(() => {
+      spineNode.setCompleteListener(() => {
         this.startButton.interactable = true; // разблокируем кнопку start
         this.inputM.enabled = true; // разблокируем поле ввода M
         this.inputN.enabled = true; // разблокируем поле ввода N
@@ -202,7 +180,7 @@ export class Main extends Component {
         this.inputY.enabled = true; // разблокируем поле ввода Y
         })
     } else {
-        console.error("Skeleton component not found", newIcon.name); // устанавливаем анимацию "win"
+      console.error("Skeleton component not found", iconNode.name);
     }
   }
-}
+} 
