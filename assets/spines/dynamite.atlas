@@ -1,0 +1,223 @@
+
+dynamite.png
+size: 1383,194
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dynamite2
+  rotate: false
+  xy: 2, 2
+  size: 209, 190
+  orig: 211, 199
+  offset: 2, 4
+  index: -1
+dynamite_light
+  rotate: false
+  xy: 213, 52
+  size: 144, 140
+  orig: 158, 152
+  offset: 7, 6
+  index: -1
+fire_light
+  rotate: false
+  xy: 1218, 59
+  size: 40, 41
+  orig: 40, 41
+  offset: 0, 0
+  index: -1
+fitil1
+  rotate: false
+  xy: 213, 4
+  size: 61, 46
+  orig: 62, 47
+  offset: 1, 0
+  index: -1
+fitil1_2
+  rotate: false
+  xy: 1112, 54
+  size: 61, 46
+  orig: 62, 47
+  offset: 1, 0
+  index: -1
+fitil2
+  rotate: false
+  xy: 1202, 12
+  size: 38, 40
+  orig: 38, 40
+  offset: 0, 0
+  index: -1
+fitil3
+  rotate: true
+  xy: 1351, 105
+  size: 42, 23
+  orig: 42, 24
+  offset: 0, 0
+  index: -1
+fitil4
+  rotate: false
+  xy: 276, 8
+  size: 47, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+fitil5
+  rotate: true
+  xy: 942, 48
+  size: 46, 26
+  orig: 48, 27
+  offset: 2, 1
+  index: -1
+iskry_glow/iskry_glow_00
+  rotate: false
+  xy: 1158, 15
+  size: 42, 37
+  orig: 67, 61
+  offset: 16, 9
+  index: -1
+iskry_glow/iskry_glow_02
+  rotate: false
+  xy: 1279, 16
+  size: 34, 34
+  orig: 67, 61
+  offset: 21, 14
+  index: -1
+iskry_glow/iskry_glow_03
+  rotate: false
+  xy: 1315, 23
+  size: 26, 27
+  orig: 67, 61
+  offset: 25, 17
+  index: -1
+iskry_glow/iskry_glow_04
+  rotate: false
+  xy: 942, 18
+  size: 26, 28
+  orig: 67, 61
+  offset: 26, 14
+  index: -1
+iskry_glow/iskry_glow_05
+  rotate: false
+  xy: 1242, 16
+  size: 35, 34
+  orig: 67, 61
+  offset: 21, 14
+  index: -1
+iskry_glow/iskry_glow_06
+  rotate: false
+  xy: 1112, 15
+  size: 44, 37
+  orig: 67, 61
+  offset: 16, 13
+  index: -1
+iskry_glow/iskry_glow_07
+  rotate: false
+  xy: 1175, 54
+  size: 41, 46
+  orig: 67, 61
+  offset: 16, 9
+  index: -1
+iskry_glow/iskry_glow_08
+  rotate: false
+  xy: 1351, 70
+  size: 29, 33
+  orig: 67, 61
+  offset: 22, 15
+  index: -1
+iskry_glow/iskry_glow_09
+  rotate: false
+  xy: 325, 13
+  size: 32, 37
+  orig: 67, 61
+  offset: 21, 9
+  index: -1
+iskry_glow/iskry_glow_10
+  rotate: true
+  xy: 1351, 149
+  size: 43, 30
+  orig: 67, 61
+  offset: 12, 18
+  index: -1
+smoke1/smoke1_00000
+  rotate: false
+  xy: 1266, 52
+  size: 83, 140
+  orig: 100, 200
+  offset: 13, 7
+  index: -1
+smoke1/smoke1_00001
+  rotate: true
+  xy: 970, 17
+  size: 83, 140
+  orig: 100, 200
+  offset: 14, 9
+  index: -1
+smoke1/smoke1_00002
+  rotate: true
+  xy: 798, 8
+  size: 86, 142
+  orig: 100, 200
+  offset: 14, 11
+  index: -1
+smoke1/smoke1_00003
+  rotate: true
+  xy: 653, 7
+  size: 88, 143
+  orig: 100, 200
+  offset: 10, 13
+  index: -1
+smoke1/smoke1_00004
+  rotate: true
+  xy: 970, 102
+  size: 90, 146
+  orig: 100, 200
+  offset: 9, 14
+  index: -1
+smoke1/smoke1_00005
+  rotate: true
+  xy: 359, 5
+  size: 90, 145
+  orig: 100, 200
+  offset: 10, 15
+  index: -1
+smoke1/smoke1_00006
+  rotate: true
+  xy: 1118, 102
+  size: 90, 146
+  orig: 100, 200
+  offset: 10, 17
+  index: -1
+smoke1/smoke1_00007
+  rotate: true
+  xy: 506, 4
+  size: 91, 145
+  orig: 100, 200
+  offset: 9, 18
+  index: -1
+smoke1/smoke1_00008
+  rotate: true
+  xy: 822, 96
+  size: 96, 146
+  orig: 100, 200
+  offset: 4, 19
+  index: -1
+smoke1/smoke1_00009
+  rotate: true
+  xy: 673, 97
+  size: 95, 147
+  orig: 100, 200
+  offset: 5, 20
+  index: -1
+smoke1/smoke1_00010
+  rotate: true
+  xy: 518, 97
+  size: 95, 153
+  orig: 100, 200
+  offset: 5, 21
+  index: -1
+smoke1/smoke1_00011
+  rotate: true
+  xy: 359, 97
+  size: 95, 157
+  orig: 100, 200
+  offset: 5, 22
+  index: -1

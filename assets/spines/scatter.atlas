@@ -1,0 +1,251 @@
+
+scatter.png
+size: 1841,464
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+circle
+  rotate: true
+  xy: 1375, 222
+  size: 240, 239
+  orig: 240, 239
+  offset: 0, 0
+  index: -1
+coin1
+  rotate: true
+  xy: 645, 137
+  size: 27, 29
+  orig: 31, 35
+  offset: 3, 3
+  index: -1
+coin2
+  rotate: true
+  xy: 190, 4
+  size: 17, 30
+  orig: 23, 36
+  offset: 3, 3
+  index: -1
+coin3
+  rotate: false
+  xy: 1699, 18
+  size: 30, 30
+  orig: 36, 36
+  offset: 3, 3
+  index: -1
+coin4
+  rotate: false
+  xy: 1668, 17
+  size: 29, 31
+  orig: 33, 37
+  offset: 3, 3
+  index: -1
+coin5
+  rotate: false
+  xy: 1301, 185
+  size: 31, 31
+  orig: 37, 37
+  offset: 3, 3
+  index: -1
+coin6
+  rotate: false
+  xy: 1731, 18
+  size: 29, 30
+  orig: 35, 36
+  offset: 3, 3
+  index: -1
+iskry3/iskry3_00000
+  rotate: true
+  xy: 1616, 400
+  size: 62, 72
+  orig: 175, 175
+  offset: 28, 15
+  index: -1
+iskry3/iskry3_00001
+  rotate: false
+  xy: 190, 23
+  size: 89, 95
+  orig: 175, 175
+  offset: 18, 6
+  index: -1
+iskry3/iskry3_00002
+  rotate: true
+  xy: 2, 3
+  size: 115, 113
+  orig: 175, 175
+  offset: 10, 0
+  index: -1
+iskry3/iskry3_00003
+  rotate: true
+  xy: 493, 6
+  size: 128, 123
+  orig: 175, 175
+  offset: 5, 1
+  index: -1
+iskry3/iskry3_00004
+  rotate: false
+  xy: 357, 2
+  size: 134, 132
+  orig: 175, 175
+  offset: 4, 0
+  index: -1
+iskry3/iskry3_00005
+  rotate: false
+  xy: 1691, 50
+  size: 138, 138
+  orig: 175, 175
+  offset: 6, 0
+  index: -1
+iskry3/iskry3_00006
+  rotate: true
+  xy: 1694, 190
+  size: 136, 141
+  orig: 175, 175
+  offset: 11, 0
+  index: -1
+iskry3/iskry3_00007
+  rotate: true
+  xy: 1691, 328
+  size: 134, 148
+  orig: 175, 175
+  offset: 15, 0
+  index: -1
+iskry3/iskry3_00008
+  rotate: false
+  xy: 1141, 6
+  size: 125, 160
+  orig: 175, 175
+  offset: 25, 0
+  index: -1
+iskry3/iskry3_00009
+  rotate: true
+  xy: 618, 8
+  size: 126, 153
+  orig: 175, 175
+  offset: 32, 16
+  index: -1
+iskry3/iskry3_00010
+  rotate: false
+  xy: 1565, 62
+  size: 124, 158
+  orig: 175, 175
+  offset: 40, 17
+  index: -1
+iskry3/iskry3_00011
+  rotate: false
+  xy: 281, 5
+  size: 74, 22
+  orig: 175, 175
+  offset: 83, 112
+  index: -1
+particle (372)
+  rotate: false
+  xy: 1624, 17
+  size: 42, 43
+  orig: 128, 128
+  offset: 48, 40
+  index: -1
+scatter
+  rotate: true
+  xy: 1301, 218
+  size: 244, 72
+  orig: 244, 72
+  offset: 0, 0
+  index: -1
+scatter_glow1
+  rotate: true
+  xy: 281, 29
+  size: 89, 72
+  orig: 89, 72
+  offset: 0, 0
+  index: -1
+scatter_glow2
+  rotate: true
+  xy: 1268, 6
+  size: 160, 72
+  orig: 160, 72
+  offset: 0, 0
+  index: -1
+scatter_glow3
+  rotate: true
+  xy: 1493, 5
+  size: 215, 70
+  orig: 215, 70
+  offset: 0, 0
+  index: -1
+scatter_glow4
+  rotate: true
+  xy: 1068, 3
+  size: 161, 71
+  orig: 161, 71
+  offset: 0, 0
+  index: -1
+scatter_glow5
+  rotate: true
+  xy: 117, 20
+  size: 98, 71
+  orig: 98, 71
+  offset: 0, 0
+  index: -1
+skatter_glow
+  rotate: false
+  xy: 1565, 3
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+star
+  rotate: true
+  xy: 345, 136
+  size: 326, 298
+  orig: 326, 298
+  offset: 0, 0
+  index: -1
+star_glow1
+  rotate: true
+  xy: 773, 3
+  size: 161, 293
+  orig: 161, 293
+  offset: 0, 0
+  index: -1
+star_glow2
+  rotate: false
+  xy: 871, 166
+  size: 208, 296
+  orig: 208, 296
+  offset: 0, 0
+  index: -1
+star_glow3
+  rotate: false
+  xy: 645, 166
+  size: 224, 296
+  orig: 224, 296
+  offset: 0, 0
+  index: -1
+star_glow4
+  rotate: false
+  xy: 1081, 168
+  size: 218, 294
+  orig: 218, 294
+  offset: 0, 0
+  index: -1
+star_glow5
+  rotate: false
+  xy: 1342, 6
+  size: 149, 210
+  orig: 149, 210
+  offset: 0, 0
+  index: -1
+star_shadow
+  rotate: true
+  xy: 1616, 245
+  size: 81, 76
+  orig: 81, 76
+  offset: 0, 0
+  index: -1
+stars1
+  rotate: true
+  xy: 2, 120
+  size: 342, 341
+  orig: 342, 341
+  offset: 0, 0
+  index: -1

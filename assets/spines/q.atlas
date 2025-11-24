@@ -1,0 +1,48 @@
+
+q.png
+size: 254,534
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aura (336)
+  rotate: false
+  xy: 2, 282
+  size: 250, 250
+  orig: 256, 256
+  offset: 1, 4
+  index: -1
+q
+  rotate: false
+  xy: 2, 129
+  size: 128, 151
+  orig: 131, 154
+  offset: 2, 2
+  index: -1
+q_glow
+  rotate: true
+  xy: 143, 2
+  size: 47, 54
+  orig: 47, 54
+  offset: 0, 0
+  index: -1
+q_glow1
+  rotate: true
+  xy: 132, 172
+  size: 108, 113
+  orig: 115, 122
+  offset: 2, 8
+  index: -1
+q_glow2
+  rotate: true
+  xy: 2, 4
+  size: 123, 139
+  orig: 129, 144
+  offset: 3, 4
+  index: -1
+q_glow3
+  rotate: false
+  xy: 143, 51
+  size: 100, 119
+  orig: 110, 131
+  offset: 9, 2
+  index: -1

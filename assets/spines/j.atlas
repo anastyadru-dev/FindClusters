@@ -1,0 +1,48 @@
+
+j.png
+size: 522,254
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+aura (336)
+  rotate: false
+  xy: 2, 2
+  size: 250, 250
+  orig: 256, 256
+  offset: 1, 4
+  index: -1
+j
+  rotate: true
+  xy: 254, 141
+  size: 111, 150
+  orig: 115, 152
+  offset: 2, 1
+  index: -1
+j_glow
+  rotate: false
+  xy: 477, 46
+  size: 43, 54
+  orig: 43, 54
+  offset: 0, 0
+  index: -1
+j_glow1
+  rotate: false
+  xy: 254, 7
+  size: 107, 132
+  orig: 113, 141
+  offset: 2, 8
+  index: -1
+j_glow2
+  rotate: false
+  xy: 406, 102
+  size: 111, 150
+  orig: 115, 152
+  offset: 2, 1
+  index: -1
+j_glow3
+  rotate: true
+  xy: 363, 11
+  size: 89, 112
+  orig: 98, 126
+  offset: 6, 1
+  index: -1

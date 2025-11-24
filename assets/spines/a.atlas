@@ -1,0 +1,48 @@
+
+a.png
+size: 572,262
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a
+  rotate: false
+  xy: 254, 114
+  size: 151, 146
+  orig: 154, 149
+  offset: 1, 2
+  index: -1
+a_glow
+  rotate: false
+  xy: 517, 59
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+a_glow1
+  rotate: true
+  xy: 254, 6
+  size: 106, 135
+  orig: 118, 143
+  offset: 5, 7
+  index: -1
+a_glow2
+  rotate: false
+  xy: 407, 114
+  size: 126, 146
+  orig: 130, 148
+  offset: 1, 1
+  index: -1
+a_glow3
+  rotate: false
+  xy: 391, 2
+  size: 124, 110
+  orig: 141, 124
+  offset: 15, 2
+  index: -1
+aura (336)
+  rotate: false
+  xy: 2, 10
+  size: 250, 250
+  orig: 256, 256
+  offset: 1, 4
+  index: -1
