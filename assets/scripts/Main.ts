@@ -112,6 +112,7 @@ export class Main extends Component {
     // для поиска и выделения кластеров элементов в двумерной сетке
     const visited: boolean[][] = Array.from({ length: this.M }, () => Array(this.N).fill(false)
     );
+    let foundCluster = false; // переменная для отслеживания наличия кластеров
 
     for (let i = 0; i < this.M; i++) { // прохождение по всем строкам
       for (let j = 0; j < this.N; j++) {
@@ -128,6 +129,14 @@ export class Main extends Component {
         }
       }
    }
+
+    if (!foundCluster) {
+        this.startButton.interactable = true; // разблокируем кнопку start
+        this.inputM.enabled = true; // разблокируем поле ввода M
+        this.inputN.enabled = true; // разблокируем поле ввода N
+        this.inputX.enabled = true; // разблокируем поле ввода X
+        this.inputY.enabled = true; // разблокируем поле ввода Y
+    }
   }
 
   findCluster(
