@@ -26,14 +26,30 @@ export class Main extends Component {
   startButton: Button = null; // ссылка на кнопку Start
 
   private grid: Node[][] = []; // сетка иконок
-  private M: number = 2;
-  private N: number = 2;
-  private X: number = 2;
-  private Y: number = 2;
+  private M: number = 0;
+  private N: number = 0;
+  private X: number = 0;
+  private Y: number = 0;
 
   start() {
     // установки событий и вызова других методов при старте компонент
     this.initGrid();
+    this.setupInputRestrictions(); // Устанавливаем ограничения на ввод
+  }
+
+  setupInputRestrictions() { // устанавливает ограничения на ввод для полей EditBox
+    this.inputM.node.on('text-changed', () => this.validateInput(this.inputM));
+    this.inputN.node.on('text-changed', () => this.validateInput(this.inputN));
+    this.inputX.node.on('text-changed', () => this.validateInput(this.inputX));
+    this.inputY.node.on('text-changed', () => this.validateInput(this.inputY));
+  }
+
+  validateInput(editBox: EditBox) { // принимает объект EditBox, который необходимо проверить
+
+    const value = parseInt(editBox.string); // получаем строку, введенную пользователем в поле ввода
+    if (isNaN(value) || value <= 0 || value > 8) {
+      editBox.string = ''; // Очищаем поле, если значение некорректно
+    }
   }
 
   initGrid() {
@@ -64,28 +80,42 @@ export class Main extends Component {
     this.inputX.enabled = false; // блокируем поле ввода X
     this.inputY.enabled = false; // блокируем поле ввода Y
 
-    this.updateParameters(); // обновление параметров из полей ввода
+    if (!this.updateParameters()) {
+      console.error('Некорректные параметры. Игра не может быть запущена.'); // сообщение об ошибке
+
+      this.startButton.interactable = true; // разблокируем кнопку start
+      this.inputM.enabled = true; // разблокируем поле ввода M
+      this.inputN.enabled = true; // разблокируем поле ввода N
+      this.inputX.enabled = true; // разблокируем поле ввода X
+      this.inputY.enabled = true; // разблокируем поле ввода Y
+    
+      return; // если параметры некорректны, выходим из метода
+    }
+
     this.clearGrid(); // очищаем сетку перед генерацией нового поля
     this.generateGrid();
     this.highlightClusters();
   }
 
-  updateParameters() {
-    const parsedM = parseInt(this.inputM.string);
+  updateParameters() { // обновление соответствующих свойств класса, если ввод корректен
+    const parsedM = parseInt(this.inputM.string); // преобразуем в целые числа
     const parsedN = parseInt(this.inputN.string);
     const parsedX = parseInt(this.inputX.string);
     const parsedY = parseInt(this.inputY.string);
 
-    if (!isNaN(parsedM) && parsedM > 0) this.M = parsedM;
-    if (!isNaN(parsedN) && parsedN > 0) this.N = parsedN;
-    if (!isNaN(parsedX) && parsedX > 0 && parsedX <= this.iconPrefabs.length) {
-      this.X = parsedX;
-    } else {
-      this.X = Math.min(this.iconPrefabs.length, this.X); // Устанавливаем X не больше количества префабов
+    if (isNaN(parsedM) || parsedM <= 0 ||
+        isNaN(parsedN) || parsedN <= 0 ||
+        isNaN(parsedX) || parsedX <= 0 || parsedX > this.iconPrefabs.length ||
+        isNaN(parsedY) || parsedY <= 0) {
+      return false; // если хоть один параметр некорректен, возвращаем false
     }
-    if (!isNaN(parsedY) && parsedY > 0) this.Y = parsedY;
 
-    this.initGrid(); // обновляем сетку с новыми параметрами
+    this.M = parsedM;
+    this.N = parsedN;
+    this.X = parsedX;
+    this.Y = parsedY;
+
+    return true; // все параметры корректны
   }
 
   generateGrid() {
@@ -142,18 +172,18 @@ export class Main extends Component {
   }
 
 
-   findCluster(x: number, y: number, iconType: any, visited: boolean[][], cluster: Vec3[]) {
+   findCluster(x: number, y: number, iconType: any, visited: boolean[][], cluster: Vec3[]) { //  поиск и сбор всех соседних ячеек (кластера) с одинаковым типом префаба
     if (
-      x < 0 || x >= this.M ||
-      y < 0 || y >= this.N ||
-      visited[x][y] ||
-      !this.isSameType(this.grid[x][y].getComponent(PrefabType).type, iconType)
+      x < 0 || x >= this.M || // проверяет, находится ли координата x вне границ сетки
+      y < 0 || y >= this.N || // проверяет, находится ли координата y вне границ сетки
+      visited[x][y] || // проверяет, была ли текущая ячейка уже посещена
+      !this.isSameType(this.grid[x][y].getComponent(PrefabType).type, iconType) // проверяет, совпадает ли тип префаба текущей ячейки с искомым типом iconType
     ) {
       return;
     }
 
-    visited[x][y] = true;
-    cluster.push(new Vec3(x, y, 0));
+    visited[x][y] = true; // ячейка была посещена и не будет обработана повторно
+    cluster.push(new Vec3(x, y, 0)); // добавляет координаты текущей ячейки в массив cluster
 
     // Проверка соседей
     this.findCluster(x - 1, y, iconType, visited, cluster); // вверх
@@ -162,7 +192,7 @@ export class Main extends Component {
     this.findCluster(x, y + 1, iconType, visited, cluster); // вправо
   }
 
-  isSameType(type1: any, type2: any): boolean {
+  isSameType(type1: any, type2: any): boolean { // метод используется для проверки того, совпадают ли типы префабов
     return type1 === type2;
   }
 
@@ -179,6 +209,7 @@ export class Main extends Component {
         this.inputX.enabled = true; // разблокируем поле ввода X
         this.inputY.enabled = true; // разблокируем поле ввода Y
         })
+
     } else {
       console.error("Skeleton component not found", iconNode.name);
     }
